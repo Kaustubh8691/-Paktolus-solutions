@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Header from './Header';
-
+import "./add.css"
 const intialState = {
   userName: sessionStorage.getItem("name"),
   message: "",
@@ -72,7 +72,7 @@ const AddForm = () => {
                   type="text"
                   className="form-control"
                   name="message"
-                  rows={6}
+                  rows={12}
                   placeholder="message"
                 />
               </Form.Group>

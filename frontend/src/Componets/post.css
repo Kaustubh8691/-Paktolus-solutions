@@ -1,0 +1,123 @@
+button.home-btn {
+    margin-left: 1vh;
+    width: 11vh;
+    border-radius: 10px;
+    height: 6vh;
+    cursor: pointer;
+    color: darkgreen;
+    font-size: large;
+}
+
+
+.container1-posts {
+    background-color: bisque;
+}
+
+.head {
+    padding: 5px;
+    background-color: lavender;
+}
+
+.sub-div {
+    font-size: large;
+    font-weight: 600;
+}
+
+button#create-btn {
+    cursor: pointer;
+    background-color: coral;
+    font-weight: 700;
+    height: 2rem;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+
+
+
+button#search-btn {
+    cursor: pointer;
+    background-color: burlywood;
+    font-weight: 700;
+    height: 2rem;
+    margin-left: 10px;
+    margin-right: 8px;
+    border-radius: 5px;
+    margin-bottom: 3vh;
+}
+.comments {
+    width: 80%;
+}
+
+input#search-input {
+    height: 4vh;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.cards {
+    background-color: #fcb75e;
+    margin: 5px;
+    width: 40vw;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid black;
+}
+
+.g-4.row.row-cols-md-3.row-cols-2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-title.h5 {
+    font-size: larger;
+    background-color: beige;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.message {
+    font-size: small;
+    background-color: cornflowerblue;
+    height: 27vh;
+    border-radius: 10px;
+    overflow-y: scroll;
+    margin-top: 5px;
+    padding-inline: 5px;
+}
+
+.comments-container {
+    font-size: small;
+    padding-inline: 11px;
+    background-color: antiquewhite;
+    justify-content: space-between;
+    display: flex;
+    height: fit-content;
+    margin-top: 2px;
+    border-radius: 10px;
+}
+
+.comment-main-conatiner {
+    overflow: scroll;
+    margin-top: 5px;
+    height: 20vh;
+}
+
+.nsme {
+    color: brown;
+}
+
+input.comment-input {
+    height: 4vh;
+    padding-left: 10px;
+    margin-top: 2vh;
+    margin-right: 2px;
+    border-radius: 10px;
+}
+
+button.comment-btn {
+    width: 9vw;
+    color: green;
+    font-weight: 700;
+    height: 2rem;
+    border-radius: 10px;
+}

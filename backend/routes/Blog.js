@@ -28,7 +28,7 @@ router.post("/blog/addblog", async (req, res) => {
 // get posts with pagination
 router.get("/blogs", async (req, res) => {
   try {
-    const { page = 1, limit = 5 } = req.query;
+    const { page = 1, limit = 25 } = req.query;
     let data = await Data.find()
       .limit(limit * 1)
       .skip((page - 1) * limit);

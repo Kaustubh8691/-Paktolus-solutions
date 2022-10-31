@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import "./home.css"
+import "./post.css"
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 
@@ -19,10 +19,15 @@ const Posts = ({ setBlogid, blogid }) => {
   const handleadd = () => {
     navigate("/addBlog");
   };
+  
   const handleSearch = async () => {
     const response = await axios.get("http://localhost:5000/api/allBlogs");
     console.log(response.data.data);
-    let data = response.data.data;
+    let data1 = response.data.data;
+    const dataone = data1.filter((Element) => Element.userName.includes(search) );
+    console.log(dataone)
+    setData(dataone)
+    
   };
   const handleclick = (obj) => {
     console.log(obj);
@@ -49,52 +54,60 @@ const Posts = ({ setBlogid, blogid }) => {
       getData();
     }
   };
+  
   useEffect(() => {
     getData();
   }, []);
-
+  const data1 = data?.filter((Element) => Element.userName.includes(search));
+  console.log(data1)
   return (
-    <div className="container1">
+    <div className="container1-posts">
       <Header />
-      <button onClick={handleadd}>Create post</button>
+      <button id="create-btn" onClick={handleadd}>Create post</button>
       <input
+      id="search-input"
         type="text"
+        value={search}
         placeholder="search"
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button onClick={() => handleSearch()}>search</button>
+      <button id="search-btn" onClick={() => handleSearch()}>search</button>
       <Row xs={2} md={3} className="g-4">
-        {data?.map((obj, idx) => (
+        {data1?.map((obj, idx) => (
           <div className="cards" key={idx}>
             <Col>
               <Card onClick={() => handleclick(obj)}>
                 <Card.Body>
                   <Card.Title>{obj.userName}</Card.Title>
-                  <div>{obj.message}</div>
-
+                  <div className="message">{obj.message}</div>
+                  <div className="comment-main-conatiner">
                   {obj.comment ? (
                     Object.values(obj.comment)?.map((ele, idcs) =>
                       ele.length > 0 ? (
-                        <div key={idcs}>
+                        <div className="comments-container" key={idcs}>
                           <div className="comments">{ele[0]}</div>
                           <div className="nsme">{ele[1]}</div>
                         </div>
                       ) : (
-                        <div>no comment</div>
+                        <div className="no-comment">no comment</div>
                       )
                     )
                   ) : (
-                    <div>no comment</div>
+                    <div className="no-comment">no comment</div>
                   )}
+                  </div>
                 </Card.Body>
               </Card>
+
               <input
+              className="comment-input"
                 type="text"
                 placeholder="comments"
                 onChange={(e) => setComment(e.target.value)}
               />
-              <button onClick={() => handlecommet(obj)}>add</button>
+              <button  className="comment-btn" onClick={() => handlecommet(obj)}>Add</button>
             </Col>
+            
           </div>
         ))}
       </Row>

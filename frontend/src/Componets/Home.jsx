@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./home.css"
 const Home = ({ setBlogid }) => {
   const navigate = useNavigate();
 
@@ -18,10 +18,10 @@ const Home = ({ setBlogid }) => {
     }
   };
   return (
-    <div className="container1">
-      <input type="text" onChange={(e) => setName(e.target.value)} required />
+    <div className="container1-home">
+      <input id="home-input" type="text" onChange={(e) => setName(e.target.value)} required />
 
-      <button onClick={(e) => handleclick()}>next</button>
+      <button id="home-btn" onClick={(e) => handleclick()}>Next</button>
     </div>
   );
 };

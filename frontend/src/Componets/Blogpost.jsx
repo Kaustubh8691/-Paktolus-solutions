@@ -44,12 +44,13 @@ const Blogpost = ({ blogid }) => {
       <div className="container-blog">
         <button onClick={onhomebtn}>Back</button>
         <div className="data-sub-conatiner">
-          <div className="tital-id">{blogid.name}</div>
-          <div className="disc-id">{blogid.message}</div>
+          <div className="blogname">{blogid.userName}</div>
+          <div className="message">{blogid.message}</div>
+          <div className="commnets-conatinersa">
           {blogid.comment ? (
             Object.values(blogid.comment)?.map((ele, idcs) =>
               ele.length > 0 ? (
-                <div key={idcs}>
+                <div key={idcs} className="comments-container1">
                   <div className="comments">{ele[0]}</div>
                   <div className="nsme">{ele[1]}</div>
                 </div>
@@ -60,12 +61,14 @@ const Blogpost = ({ blogid }) => {
           ) : (
             <div>no comment</div>
           )}
+          </div>
           <input
+          className="comment-input"
             type="text"
             placeholder="comments"
             onChange={(e) => setComment(e.target.value)}
           />
-          <button onClick={() => handlecommet(blogid)}>add</button>
+          <button className="comment-btn" onClick={() => handlecommet(blogid)}>add</button>
         </div>
       </div>
     </>

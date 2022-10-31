@@ -1,0 +1,25 @@
+.sub-container {
+    padding-top: 2vh;
+    padding-inline: 20px;
+    background-color: lightgray;
+    height: 91vh;
+}
+
+.btn {
+    margin-bottom: 4px;
+}
+
+
+textarea#exampleForm\.ControlTextarea1 {
+    width: 60vw;
+    background-color: antiquewhite;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+button.publish.btns {
+    background-color: darkslategrey;
+    color: white;
+    font-size: large;
+    border-radius: 10px;
+}

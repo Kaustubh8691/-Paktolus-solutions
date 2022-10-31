@@ -1,0 +1,26 @@
+.container1 {margin-top: 43vh;text-align-last: center;}
+
+.container1-home {
+    padding-left: 31vw;
+    height: 100vh;
+    background-color: #faaf4b;
+    padding-top: 43vh;
+}
+
+input#home-input {
+    height: 5vh;
+    width: 32vw;
+    font-size: large;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+button#home-btn {
+    margin-left: 1vh;
+    width: 11vh;
+    border-radius: 10px;
+    height: 6vh;
+    cursor: pointer;
+    color: darkgreen;
+    font-size: large;
+}
